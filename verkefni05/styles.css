@@ -8,8 +8,6 @@
 }
 
 html {
-  box-sizing: border-box;
-
   font-family: 'Open Sans', helvetica, arial, sans-serif;
   font-size: 16px;
 }
@@ -18,4 +16,63 @@ main {
   margin: 0 auto;
   max-width: 1500px;
   padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.25em;
+  max-width: 470px;
+  /* langadi ad gera thannig ad texti myndi ekki flaed ut til haegri */
+  /* en thetta lagar ekki thar sem er lika mynd i card*/
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* faera sidasta kort fremst */
+.card:last-of-type { order: -1; }
+
+.card {
+  padding: 10px; /*fannst fallegra ad hafa padding */
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: solid #aaa 2px;
+  max-width: 470px;
+  max-height: 320px;
+  overflow: auto; /* skrunstika */
+  overflow-wrap: break-word; /* klippir ord ef of long*/
+}
+
+.card img {
+  width: 150px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+
+.card > div {
+  display: flex; /* setur texta vid hlid myndar */
+}
+
+
+.card > ul {
+  display: flex; /* breytir lista i linu */
+}
+
+ul {
+  list-style-type: none;
+  font-weight: bold;
+}
+
+li {
+  padding-right: 5px; /*bil á milli orða*/
 }
