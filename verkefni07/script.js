@@ -50,13 +50,14 @@ function play() {
     return;
   } else if(answer === true){
     games.push(guesses);
+    /* af einhverjum ástæðum þá skrást bara tilvikin þegar giskið er rétt í fyrstu tilraun :( */
     console.log(games);
     return;
   }
 }
 
 function ask() {
-  guesses =0;
+  guesses = 0;
   correctNumber = randomNumber(1,100);
   console.log(correctNumber);
   studentGuess = prompt(`Giskaðu á heiltölu á milli 1 og 100.`)
@@ -91,7 +92,6 @@ function guess() {
 function guessAgain() {
   studentGuess = prompt(`Giskaðu aftur:`);
   guesses++;
-/*  console.log(guesses); */
   guess();
 }
 
@@ -124,7 +124,7 @@ function getResults(){
  * þarf að útfæra með lykkju.
  */
 function calculateAverage(input){
-  avgGuesses = input.reduce((a,b)=> a+b,0)/input.length
+  avgGuesses = input.reduce( (a,b)=> a+b,0 )/input.length
   avgGuessesShort =avgGuesses.toFixed(2);
   return avgGuessesShort;
 }
